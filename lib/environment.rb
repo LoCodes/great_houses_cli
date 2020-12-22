@@ -1,6 +1,4 @@
-require "great_houses_cli/version"
+require_relative "./great_houses_cli/version"
 
-module GreatHousesCli
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require 'bundler'
+Bundler.require
