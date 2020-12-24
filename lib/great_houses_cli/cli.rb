@@ -28,6 +28,11 @@ class CLI
 
     def invalid 
         puts "Invalid entry, try again."
+        #menu - can be added here as well 
+    end 
+
+    def house_selection 
+        puts "Select a house for more information."
     end 
 
 
@@ -38,13 +43,12 @@ class CLI
 
         if selection == 'y'
             houses_list
-            menu
+            menu            #recursion 
         elsif selection == 'exit'
             bye
         else 
             invalid
             menu
-            #invalid entry 
         end 
 
     end 
