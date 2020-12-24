@@ -18,6 +18,11 @@ class CLI
         menu 
     end 
 
+    def houses_list
+        ["test1", "test2", "test3"].each.with_index(1) {|test, i| puts "#{i}. #{test}"}
+
+    end 
+
 
     #show list, error, exit method 
 
@@ -25,7 +30,8 @@ class CLI
         selection = user_input
 
         if selection == 'y'
-            # print list 
+            houses_list
+            menu
         elsif selection == 'exit'
             # exit program 
         else 
