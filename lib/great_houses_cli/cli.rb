@@ -20,6 +20,7 @@ class CLI
 
     def houses_list
         ["test1", "test2", "test3"].each.with_index(1) {|test, i| puts "#{i}. #{test}"}
+        house_selection
     end 
 
     def bye 
