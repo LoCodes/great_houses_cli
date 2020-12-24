@@ -34,6 +34,10 @@ class CLI
 
     def house_selection 
         puts "Select a house for more information."
+
+        selection = user_input
+
+        #query to find house details 
     end 
 
 

@@ -22,4 +22,11 @@ class House
         @@all
     end 
 
+
+    #create a method that accepts the house name and finds the object with that name 
+
+    def self.find_house(house_name)
+        self.all.find {|house| house.name == house_name}
+    end 
+
 end 
