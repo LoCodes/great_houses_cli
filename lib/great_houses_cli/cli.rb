@@ -36,7 +36,9 @@ class CLI
         puts "Select a house for more information."
 
         selection = user_input
-        House.find_house(selection)
+
+        puts "#{selection}"    #use this temporarily to test out program
+        #House.find_house(selection)   
 
         #query to find house details 
     end 
