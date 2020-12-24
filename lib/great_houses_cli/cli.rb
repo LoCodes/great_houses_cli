@@ -3,6 +3,7 @@
 class CLI 
 
     def start
+        API.get_data
         puts "Welcome to the Seven Kingdoms, which region would thou like to visit?"
         puts "Thy name is needed before entering traveler" #i need your name before you enter, What is thy name traveler?
         greeting(user_input)
