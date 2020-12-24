@@ -30,6 +30,7 @@ class CLI
             # exit program 
         else 
             puts "Invalid entry, try again."
+            menu
             #invalid entry 
         end 
 
