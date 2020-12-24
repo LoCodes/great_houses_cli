@@ -1,16 +1,17 @@
 class House
 
-    attr_accessor :name, :region, :coat_of_arms, :current_lord, :founded
+    attr_accessor :name, :region, :seat, :allegiance, :sigil, :words
 
 
     @@all = []
 
-    def initialize(name, region, coat_of_arms, current_lord, founded)  #mass assign later
+    def initialize(name, region, seat, allegiance, sigil, words)  #mass assign later
         @name = name 
         @region = region 
-        @coat_of_arms = coat_of_arms
-        @current_lord = current_lord  #url
-        @founded = founded 
+        @seat = seat
+        @allegiance = allegiance
+        @sigil = sigil 
+        @words = words
         save
     end 
 
