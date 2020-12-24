@@ -20,7 +20,10 @@ class CLI
 
     def houses_list
         ["test1", "test2", "test3"].each.with_index(1) {|test, i| puts "#{i}. #{test}"}
+    end 
 
+    def bye 
+        puts "Until next time."
     end 
 
 
@@ -33,7 +36,7 @@ class CLI
             houses_list
             menu
         elsif selection == 'exit'
-            # exit program 
+            bye
         else 
             puts "Invalid entry, try again."
             menu
