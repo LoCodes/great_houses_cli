@@ -26,6 +26,10 @@ class CLI
         puts "Until next time."
     end 
 
+    def invalid 
+        puts "Invalid entry, try again."
+    end 
+
 
     #show list, error, exit method 
 
@@ -38,7 +42,7 @@ class CLI
         elsif selection == 'exit'
             bye
         else 
-            puts "Invalid entry, try again."
+            invalid
             menu
             #invalid entry 
         end 
