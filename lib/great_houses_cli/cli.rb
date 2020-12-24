@@ -13,14 +13,23 @@ class CLI
     end 
 
     def greeting(name)
-        puts "Very well #{name}, may I fancy thou information of the nine great houses of Westeros?"
+        puts "Very well #{name}, may I fancy thou information of the nine great houses of the Seven Kingdoms?"
+        puts "please input 'y' or 'exit to leave the Seven Kingdoms"
     end 
 
 
     #show list, error, exit method 
 
     def menu 
+        selection = user_input
 
+        if selection == 'y'
+            # print list 
+        elsif selection == 'exit'
+            # exit program 
+        else 
+            #invalid entry 
+        end 
 
     end 
 
