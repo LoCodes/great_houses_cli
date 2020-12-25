@@ -5,13 +5,20 @@ class House
 
     @@all = []
 
-    def initialize(name, region, seat, allegiance, sigil, words)  #mass assign later
-        @name = name 
-        @region = region 
-        @seat = seat
-        @allegiance = allegiance
-        @sigil = sigil 
-        @words = words
+    # def initialize(name, region, seat, allegiance, sigil, words)  #mass assign later
+    #     @name = name 
+    #     @region = region 
+    #     @seat = seat
+    #     @allegiance = allegiance
+    #     @sigil = sigil 
+    #     @words = words
+    #     save
+    # end 
+
+    def initialize(house_hash)    # mass assignment 
+        house_hash.each do |k, v|
+            self.send("#{k}=", v) if self.respond_to?("#{k}=")  # to return only the attributes I'm asking for 
+        end 
         save
     end 
 

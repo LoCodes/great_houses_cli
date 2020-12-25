@@ -12,7 +12,6 @@ class API
         houses_array = JSON.parse(response)
         houses_array.each do |house|
             House.new(house)
-            binding.pry 
         end 
     end 
 
