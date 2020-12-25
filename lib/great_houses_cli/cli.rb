@@ -6,8 +6,9 @@ class CLI
         puts "Welcome to the Seven Kingdoms, which region would thou like to visit?"
         puts "Thy name is needed before entering traveler" #i need your name before you enter, What is thy name traveler?
         API.get_data
-        binding.pry
+        #binding.pry
         greeting(user_input)
+        
     end 
 
     def user_input
@@ -21,7 +22,7 @@ class CLI
     end 
 
     def houses_list
-        Starship.all.each.with_index(1) {|test, i| puts "#{i}. #{test}"}
+        House.all.each.with_index(1) {|house, i| puts "#{i}. #{house.name}"}
         house_selection
     end 
 
@@ -39,11 +40,26 @@ class CLI
 
         selection = user_input
 
-        puts "#{selection}"    #use this temporarily to test out program
+        #puts "#{selection}"    #use this temporarily to test out program
         house = House.find_house(selection)   
-
+        house_details(selection)
         #query to find house details 
     end 
+
+    # :name, :region, :seat, :allegiance, :sigil, :words
+
+    def house_details(house)
+        puts "Name: #{house.name}"
+        puts "Region: #{house.region}"
+        puts "Seat: #{house.seat}"
+        puts "Allegiance: #{house.allegiance}"
+        puts "Sigil: #{house.sigil}"
+        puts "Words: #{house.words}"
+        menu
+
+    end 
+
+
 
 
     #show list, error, exit method 
