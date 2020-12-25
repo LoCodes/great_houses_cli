@@ -32,15 +32,13 @@ class CLI
 
     def invalid 
         puts "Invalid entry, try again."
-        #menu - can be added here as well 
+        menu #- can be added here as well 
     end 
 
     def house_selection 
         puts "Select a house for more information."
 
         selection = user_input
-
-        #puts "#{selection}"    #use this temporarily to test out program
         house = House.find_house(selection)   
         house_details(house)
         #query to find house details 
@@ -57,6 +55,8 @@ class CLI
         puts "Sigil: #{house.sigil}"
         puts "Words: #{house.words}"
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+        puts "Would you like to pick antoher house?"
         menu
 
     end 
@@ -74,9 +74,7 @@ class CLI
             bye
         else 
             invalid
-            menu
         end 
-
     end 
 
 end 
