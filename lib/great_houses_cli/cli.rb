@@ -40,7 +40,7 @@ class CLI
         selection = user_input
 
         puts "#{selection}"    #use this temporarily to test out program
-        #House.find_house(selection)   
+        house = House.find_house(selection)   
 
         #query to find house details 
     end 
