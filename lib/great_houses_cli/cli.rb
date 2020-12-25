@@ -42,24 +42,24 @@ class CLI
 
         #puts "#{selection}"    #use this temporarily to test out program
         house = House.find_house(selection)   
-        house_details(selection)
+        house_details(house)
         #query to find house details 
     end 
 
     # :name, :region, :seat, :allegiance, :sigil, :words
 
     def house_details(house)
+        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         puts "Name: #{house.name}"
         puts "Region: #{house.region}"
         puts "Seat: #{house.seat}"
         puts "Allegiance: #{house.allegiance}"
         puts "Sigil: #{house.sigil}"
         puts "Words: #{house.words}"
+        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         menu
 
     end 
-
-
 
 
     #show list, error, exit method 
