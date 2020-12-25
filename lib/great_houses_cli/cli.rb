@@ -17,7 +17,7 @@ class CLI
 
     def greeting(name)
         puts "Very well #{name}, may I fancy thou information of the nine great houses of the Seven Kingdoms?"
-        puts "please input 'y' or 'exit to leave the Seven Kingdoms"
+        puts "please input 'y' or 'n' to leave the Seven Kingdoms"
         menu 
     end 
 
