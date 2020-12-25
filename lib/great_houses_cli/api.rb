@@ -10,7 +10,10 @@ class API
     def self.get_data 
         response = RestClient.get('https://api.got.show/api/show/houses')
         houses_array = JSON.parse(response)
-        binding.pry 
+        houses_array.each do |house|
+            House.new(house)
+            binding.pry 
+        end 
     end 
 
 end 
