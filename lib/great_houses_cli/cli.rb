@@ -17,7 +17,8 @@ class CLI
 
     def greeting(name)
         puts "Very well #{name}, may I fancy thou information of the nine great houses of the Seven Kingdoms?"
-        puts "please input 'y' or 'n' to leave the Seven Kingdoms"
+        puts "please input 'y' or 'n' to leave the Seven Kingdoms" 
+
         menu 
     end 
 
@@ -64,13 +65,13 @@ class CLI
 
     #show list, error, exit method 
 
-    def menu 
+    def menu
         selection = user_input
 
         if selection == 'y'
             houses_list
             menu            #recursion 
-        elsif selection == 'exit'
+        elsif selection == 'n'
             bye
         else 
             invalid
