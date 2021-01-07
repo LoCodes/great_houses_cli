@@ -47,13 +47,14 @@ class CLI
     # :name, :region, :seat, :allegiance, :sigil, :words
 
     def house_details(house)
+        #binding.pry
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         puts "Name: #{house.name}"
         puts "Region: #{house.region[0]}"#.gsub!(/[!@%&"]/,'')
-        puts "Seat: #{house.seat.join(", ")}" unless house.seat.join == "" 
-        puts "Allegiance: #{house.allegiance.join(", ")}"
-        puts "Sigil: #{house.sigil}" unless house.sigil == ""
-        puts "Words: #{house.words}" unless house.words == ""
+        puts "Seat: #{house.seat.join(", ")}" if house.seat.join != "" 
+        puts "Allegiance: #{house.allegiance.join(", ")}" if house.allegiance.join != ""
+        puts "Sigil: #{house.sigil}" if house.sigil != ""
+        puts "Words: #{house.words}" if house.words != ""
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
         puts "Would you like to pick another house?"
