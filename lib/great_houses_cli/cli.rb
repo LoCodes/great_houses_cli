@@ -3,7 +3,7 @@
 class CLI 
 
     def start
-        puts "Welcome to the Seven Kingdoms, which region would thou like to visit?".colorize(:cyan)
+        puts "Welcome to the Seven Kingdoms!".colorize(:cyan)
         puts ""
         puts "Thy name is needed before entering traveler.".colorize(:cyan)
         API.get_data
