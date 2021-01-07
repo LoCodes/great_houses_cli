@@ -84,7 +84,6 @@ class CLI
 
         if selection == 'y'
             houses_list
-            #menu            #recursion 
         elsif selection == 'n'
             bye
         else 
