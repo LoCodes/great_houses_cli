@@ -3,7 +3,6 @@
 # creating a new RUBY objects with that data => Object Orientation 
 # should always be class methods! dont need instance methods 
 
-require 'pry'
 
 
 class API 
@@ -13,9 +12,10 @@ class API
         response = RestClient.get('https://api.got.show/api/show/houses')
         houses_array = JSON.parse(response)
         houses_array.each do |house|
-            House.new(house)
+            if house["name"].start_with?("House")
+                House.new(house) 
+            end 
         end 
     end 
-
 end 
 

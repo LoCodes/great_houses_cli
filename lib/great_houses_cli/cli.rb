@@ -32,16 +32,24 @@ class CLI
     end 
 
     def invalid 
-        puts "I beg your pardon? Or input 'n' to exit.".colorize(:light_red)
-        menu #- can be added here as well 
+        puts "I beg your pardon?".colorize(:light_red)
+        #menu #- can be added here as well 
     end 
 
     def house_selection 
+        puts "------------------------------------"
         puts "Select a house for more information.".colorize(:cyan)
+        puts "------------------------------------"
+
 
         selection = user_input
-        house = House.find_house(selection)   
-        house_details(house)
+        house = House.find_house(selection)  
+        if house 
+            house_details(house)
+        else
+            invalid
+            house_selection
+        end 
         #query to find house details 
     end 
 
@@ -50,20 +58,20 @@ class CLI
     def house_details(house)
         puts ""
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        puts "Name:".colorize(:blue) + " #{house.name}"
+        puts "Name:".colorize(:cyan) + " #{house.name}"
         puts ""
-        puts "Region:".colorize(:blue) + " #{house.region[0]}" if house.region.join != ""
+        puts "Region:".colorize(:cyan) + " #{house.region[0]}" if house.region.join != ""
         puts ""
-        puts "Seat:".colorize(:blue) + " #{house.seat.join(", ")}" if house.seat.join != "" 
+        puts "Seat:".colorize(:cyan) + " #{house.seat.join(", ")}" if house.seat.join != "" 
         puts ""
-        puts "Allegiance:".colorize(:blue) +  " #{house.allegiance.join(", ")}" if house.allegiance.join != ""
+        puts "Allegiance:".colorize(:cyan) +  " #{house.allegiance.join(", ")}" if house.allegiance.join != ""
         puts ""
-        puts "Sigil:".colorize(:blue) + " #{house.sigil}" if house.sigil != ""
+        puts "Sigil:".colorize(:cyan) + " #{house.sigil}" if house.sigil != ""
         puts ""
-        puts "Words:".colorize(:blue) + " #{house.words}" if house.words != ""
+        puts "Words:".colorize(:cyan) + " #{house.words}" if house.words != ""
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-        puts "Would you like to pick another house?"
+        puts "Would you like to pick another house? enter: y/n".colorize(:cyan)
         menu
 
     end 
@@ -81,6 +89,7 @@ class CLI
             bye
         else 
             invalid
+            menu
         end 
     end 
 
