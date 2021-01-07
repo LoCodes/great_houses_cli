@@ -6,7 +6,6 @@ class CLI
         puts "Welcome to the Seven Kingdoms, which region would thou like to visit?"
         puts "Thy name is needed before entering traveler" #i need your name before you enter, What is thy name traveler?
         API.get_data
-        #binding.pry
         greeting(user_input)
         
     end 
@@ -50,14 +49,14 @@ class CLI
     def house_details(house)
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         puts "Name: #{house.name}"
-        puts "Region: #{house.region}"
-        puts "Seat: #{house.seat}"
-        puts "Allegiance: #{house.allegiance}"
-        puts "Sigil: #{house.sigil}"
-        puts "Words: #{house.words}"
+        puts "Region: #{house.region[0]}"#.gsub!(/[!@%&"]/,'')
+        puts "Seat: #{house.seat.join(", ")}" unless house.seat.join == "" 
+        puts "Allegiance: #{house.allegiance.join(", ")}"
+        puts "Sigil: #{house.sigil}" unless house.sigil == ""
+        puts "Words: #{house.words}" unless house.words == ""
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-        puts "Would you like to pick antoher house?"
+        puts "Would you like to pick another house?"
         menu
 
     end 
