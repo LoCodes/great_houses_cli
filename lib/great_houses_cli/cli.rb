@@ -57,7 +57,7 @@ class CLI
 
     def house_details(house)
         puts ""
-        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        puts "....................................................................................................................................."
         puts "Name:".colorize(:cyan) + " #{house.name}"
         puts ""
         puts "Region:".colorize(:cyan) + " #{house.region[0]}" if house.region.join != ""
@@ -69,8 +69,8 @@ class CLI
         puts "Sigil:".colorize(:cyan) + " #{house.sigil}" if house.sigil != ""
         puts ""
         puts "Words:".colorize(:cyan) + " #{house.words}" if house.words != ""
-        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-
+        puts "....................................................................................................................................."
+        puts ""
         puts "Would you like to pick another house? enter: y/n".colorize(:cyan)
         menu
 
